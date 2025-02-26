@@ -74,34 +74,39 @@
 			
 			</div>
 			<div>
-				<span>Etiqueta d eaudio con source y type</span>
+				<span>Etiqueta de audio con source y type</span>
 				<audio id="ejemplo2" src="media/sounds/01GroundTheme.mp3" type="audio/mp3">
 					Losiento su navegador no permite la ejecucion de audio
 				</audio>
 				<!-- El type puede ser audio/ogg , audio/wav audio/midi, audio/mp3 -->
 			</div>
 			<div>>
-				<span>Etiqueta d eaudio con source y type</span>
+				<span>Etiqueta de audio con source y type</span>
 				<audio controls id="ejemplo3" src="media/sounds/01GroundTheme.mp3" type="audio/mp3">
 					Losiento su navegador no permite la ejecucion de audio
 				</audio>
 				<!-- El type puede ser audio/ogg , audio/wav audio/midi, audio/mp3 -->
 				<div>>
-					<span>Etiqueta d eaudio con source y type</span>
+					<span>Etiqueta de audio con source y type</span>
 					<audio controls autoplay id="ejemplo4" src="media/sounds/03UnderwaterTheme.mp3" type="audio/mp3">
 						Losiento su navegador no permite la ejecucion de audio
 					</audio>
 					<!-- El type puede ser audio/ogg , audio/wav audio/midi, audio/mp3 -->
 				</div>
 				<div>>
-					<span>Etiqueta d eaudio con source y type, </span>
+					<span>Etiqueta de audio con source y type, </span>
 					<audio controls autoplay loop id="ejemplo5" src="media/sounds/03UnderwaterTheme.mp3" type="audio/mp3">
 						Losiento su navegador no permite la ejecucion de audio
 					</audio>
 					<!-- El type puede ser audio/ogg , audio/wav audio/midi, audio/mp3 -->
 				</div>
 				<div>
-					<span>Etiqueta d eaudio con source multiples tipos</span>
+					<span>Etiqueta de audio con source y type, controls, autoplay y loop</span>
+					<audio controls autoplay loop id="ejemplo6" src="media/sounds/02UnderwaterTheme.mp3" type="audio/mp3">
+						Losiento su navegador no permite la ejecucion de audio
+					</audio>
+					<!-- El type puede ser audio/ogg , audio/wav audio/midi, audio/mp3 -->
+					<span>Etiqueta de audio con source multiples tipos</span>
 					<audio controls autoplay loop>
 						<source src="media/sounds/102-bass-break-76768.mp3" type="audio/mp3">
 						<source src="media/sounds/phz_135_pad-83906.mp3" type="audio/mp3">
@@ -111,18 +116,18 @@
 				</div>
 				<div>
 					<h1>Reproductor improvisado</h1>
-					<audio id="reprodcutor">
-						<source src="media/sounds/788470_newlocknew_scne_a-crrepy-red-corrido-and-a-scary-room.mp3" type="audio/mp3"
+					<audio id="reproductor">
+						<source src="media/sounds/788470_newlocknew_scne_a-crrepy-red-corrido-and-a-scary-room.mp3" type="audio/mp3">
 
 					</audio>
-					<button type="button" id="play" class="btn-primary">Reproducior</button>
-					<button type="button" id="play" class="btn-primary">Reproducior</button>
+					<button type="button" id="play" class="btn-primary">Reproducir</button>
+					<button type="button" id="play" class="btn-primary">pausar</button>
 					
 				</div>
 			</div>
-		</main>
-		<script type="text/javascript">
-			window.onload = () => { 
+	</main>
+	<script type="text/javascript">
+		window.onload = () => { 
 			const audio = document.getElementById("reproductor");
 			const play = document.getElementById("play");
 			const pause = document.getElementById("pause");
@@ -132,13 +137,12 @@
 
 			function playAudio(){
 				audio.play()
-			{
-				function pauseAudio(){
-					audio.pause();
+			}
+			function pauseAudio(){
+				audio.pause();
 			}
 		}
-	</scrip>
+	</script>
 
-
-	</body>
+</body>
 </html>
