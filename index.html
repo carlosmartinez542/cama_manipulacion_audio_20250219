@@ -7,7 +7,7 @@
 		<meta name="author" content="Jaime Jeovanny Cortez Flores" />
 		<meta name="copyright" content="© 2025 JJCF" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Manipulación de flujos de sonido - Jaime Jeovanny Cortez Flores</title>
+		<title>Manipulación de flujos de sonido - carlos anibal martinez alvarenga</title>
 		<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2/2227.png" type="image/x-icon" />
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<script src="js/jquery-3.7.1.min.js"></script>
@@ -117,13 +117,23 @@
 				<div>
 					<h1>Reproductor improvisado</h1>
 					<audio id="reproductor">
-						<source src="media/sounds/788470_newlocknew_scne_a-crrepy-red-corrido-and-a-scary-room.mp3" type="audio/mp3">
+						<source src="media/sounds/788470_newlocknew_scne_a-creepy-red-corrido-and-a-scary-room.mp3" type="audio/mp3">
 
 					</audio>
 					<button type="button" id="play" class="btn-primary">Reproducir</button>
 					<button type="button" id="play" class="btn-primary">pausar</button>
 					
 				</div>
+			</div>
+			<div id="drumSet">
+				<button type="button" id="KeyW" class="btn btn-secondary">Tambor 1</button>
+				<button type="button" id="KeyA" class="btn btn-secondary">Tambor 2</button>
+				<button type="button" id="KeyS" class="btn btn-secondary">Tambor 3</button>
+				<button type="button" id="KeyD" class="btn btn-secondary">Tambor 4</button>
+				<button type="button" id="KeyJ" class="btn btn-secondary">Tambor 5</button>
+				<button type="button" id="KeyM" class="btn btn-secondary">Tambor 6</button>
+				
+
 			</div>
 	</main>
 	<script type="text/javascript">
@@ -134,7 +144,6 @@
 
 			play.onclick = playAudio;
 			pause.onclick = pauseAudio;
-
 			function playAudio(){
 				audio.play()
 			}
@@ -143,6 +152,35 @@
 			}
 		}
 	</script>
+	<script type="text/javascript">
+		const sound = {
+			'KeyW': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/tom1.ogg',
+			'KeyA': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/tom2.ogg',
+			'KeyS': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/tom3.ogg',
+			'KeyD': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/pad1.ogg',
+			'KeyJ': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/snare1.ogg',
+			'KeyK': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/crash1.ogg',
+			'KeyL': 'https://www.virtualdrumming.com/drums/virtual-drum-sounds/hip-hop/kik.ogg',
+		}
 
+		const play = sound => {
+			console.log("reproduciendo",sound);
+			var audio = new Audio(sound);
+			audio.play();
+		}
+
+		Document.getElementById("drumset").addEvenListener('click',function(e){
+			const tgt = e.target.closest('button');
+			if(tgt) play(sounds[tgt.id])
+		});
+
+		window.addEventListener('Keypress',function(e){
+			console.log(e.code);
+			if(sound[e.code]){
+				console.log("presionando",e.code);
+				document.getElementById(e.code).click();
+			}
+		});
+	</script>
 </body>
 </html>
